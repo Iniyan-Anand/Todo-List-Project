@@ -68,7 +68,7 @@ app.get("/", function(req, res) {
       });
       res.redirect("/");
     } else {
-      res.render("list", { listTitle: "Today", newListItems: foundItems });
+      res.render("list.ejs", { listTitle: "Today", newListItems: foundItems });
     }
   })
   .catch(function(err){
@@ -94,7 +94,7 @@ app.get("/:customListName",function(req,res){
             res.redirect("/"+customListName);
           }
           else{
-            res.render("list",{listTitle: foundList.name, newListItems: foundList.items});
+            res.render("list.ejs",{listTitle: foundList.name, newListItems: foundList.items});
           }
     })
     .catch(function(err){});
@@ -140,11 +140,11 @@ app.post("/delete", async function (req, res) {
 });
  
 app.get("/work", function(req,res){
-  res.render("list", {listTitle: "Work List", newListItems: workItems});
+  res.render("list.ejs", {listTitle: "Work List", newListItems: workItems});
 });
  
 app.get("/about", function(req, res){
-  res.render("about");
+  res.render("about.ejs");
 });
  
 app.listen(3000, function() {
