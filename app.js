@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
  
-mongoose.connect("mongodb+srv://iniyanvanand:test@cluster0.punnv4k.mongodb.net/todolistDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://iniyanvanand:<password>@cluster0.punnv4k.mongodb.net/todolistDB", {useNewUrlParser: true});
  
 //Created Schema
 const itemsSchema = new mongoose.Schema({
